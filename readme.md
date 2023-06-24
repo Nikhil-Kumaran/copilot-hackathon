@@ -72,8 +72,8 @@ Up-next is to develop this application with more advanced features and functiona
 ## Team Members:
 
 <a href="https://github.com/ahamedbasha-n">
-  <img src="https://avatars.githubusercontent.com/u/69695103?v=4"/>
+  <img style="width:100px;height:100px;border-radius:50%" src="https://avatars.githubusercontent.com/u/69695103?v=4"/>
 </a>
 <a href="https://github.com/Nikhil-Kumaran">
-  <img src="https://avatars.githubusercontent.com/u/25131835?v=4"/>
+  <img style="width:100px;height:100px;border-radius:50%;margin-left:100px" src="https://avatars.githubusercontent.com/u/25131835?v=4"/>
 </a>
