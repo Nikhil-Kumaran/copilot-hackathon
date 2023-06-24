@@ -34,6 +34,11 @@ The Idea behind **FinSense** is to Create a Web Application to add, edit, and de
 - FinSense allows to add, edit, and delete income, expense transactions.
 - Helps you visualize transactions via charts.
 
+## Working Demo
+
+https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/25131835/e353b65d-448e-4fab-8402-1f429f382659
+
+
 ## How GitHub Copilot helped us in this project?
 1. Increased Productivity
 2. Improved Code Quality
