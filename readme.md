@@ -22,10 +22,13 @@ The Idea behind **FinSense** is to Create a Web Application to add, edit, and de
 
 
 
-## Structure of the application:
+# Structure of the application:
 1. Authentication Page
 2. Transaction Page
 3. Reports Page
+
+
+![arch](https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/69695103/d27c4181-4581-4707-bd4a-1335d817a556)
 
 ## What it does?
 - FinSense allows to add, edit, and delete income, expense transactions.
