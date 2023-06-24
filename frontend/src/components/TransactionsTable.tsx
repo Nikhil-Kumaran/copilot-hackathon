@@ -1,6 +1,6 @@
 import { useGetTransactions } from "@/hooks/data-fetching/useGetTransactions";
 import { useUser } from "@/hooks/data-fetching/useUser";
-import { Modal, Space } from "antd";
+import { Modal, Space, Statistic } from "antd";
 import { Tag } from "antd";
 import { Table } from "antd";
 import { useState } from "react";
@@ -34,9 +34,20 @@ export function TransactionsTable() {
       key: "name"
     },
     {
+      title: "Type",
+      dataIndex: "type",
+      key: "type",
+      render: (_, { type }) => (
+        <>
+          <Tag color={type === "income" ? "green" : "red"}>{type.charAt(0).toUpperCase() + type.slice(1)}</Tag>
+        </>
+      )
+    },
+    {
       title: "Amount",
       dataIndex: "amount",
-      key: "amount"
+      key: "amount",
+      render: (_, { amount }) => <div>Rs. {amount}</div>
     },
     {
       title: "Date",
@@ -44,14 +55,10 @@ export function TransactionsTable() {
       key: "date"
     },
     {
-      title: "categories",
+      title: "Category",
       key: "categories",
       dataIndex: "categories",
-      render: (_, { categories }) => (
-        <>
-          <Tag color={"green"}>{categories}</Tag>
-        </>
-      )
+      render: (_, { categories }) => <>{categories ? <Tag color={"blue"}>{categories?.charAt(0)?.toUpperCase() + categories?.slice(1)}</Tag> : "-"}</>
     },
     {
       title: "Action",
@@ -67,6 +74,9 @@ export function TransactionsTable() {
             Edit
           </a>
           <a
+            style={{
+              color: "tomato"
+            }}
             onClick={() => {
               Modal.confirm({
                 title: "Delete transaction",
@@ -88,11 +98,58 @@ export function TransactionsTable() {
     }
   ];
   const parsedData = data?.data?.map((d) => ({ ...d.attributes, id: d.id }));
-  console.log("data", data, isLoading, error, parsedData, currentTrans);
+
+  const totalIncome = parsedData?.filter((data) => data?.type === "income")?.reduce((acc, data) => acc + data.amount, 0);
+
+  const totalExpense = parsedData?.filter((data) => data?.type === "expense")?.reduce((acc, data) => acc + data.amount, 0);
 
   return (
     <>
-      <Table columns={columns} dataSource={parsedData || []} loading={isLoading} pagination={false} />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center"
+        }}
+      >
+        <Statistic
+          valueStyle={{
+            color: "#85BB65"
+          }}
+          style={{
+            marginRight: "4rem"
+          }}
+          title="Total income"
+          value={totalIncome}
+        />
+        <br />
+        <Statistic
+          valueStyle={{
+            color: "red"
+          }}
+          style={{
+            marginRight: "4rem"
+          }}
+          title="Total expenses"
+          value={totalExpense}
+        />
+        <br />
+        <Statistic
+          valueStyle={{
+            color: "#1DA1F2"
+          }}
+          style={{
+            marginRight: "4rem"
+          }}
+          title="Balance"
+          value={totalIncome - totalExpense}
+        />
+      </div>
+
+      <br />
+      {/* <div>
+        {totalIncome} {totalExpense}
+      </div> */}
+      <Table columns={columns} dataSource={parsedData || []} loading={isLoading || !user?.id} pagination={false} />
 
       <Modal title="Edit transaction" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={null} destroyOnClose>
         <TransactionModal handleOk={handleOk} defaultValues={currentTrans} isEdit />

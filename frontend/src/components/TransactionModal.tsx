@@ -4,12 +4,21 @@ import { useGetTransactions } from "@/hooks/data-fetching/useGetTransactions";
 import { usePostTransactions } from "@/hooks/data-fetching/usePostTransaction";
 import { useUpdateTransactions } from "@/hooks/data-fetching/useUpdateTransaction";
 import { useUser } from "@/hooks/data-fetching/useUser";
+import { Transaction } from "@/types";
 import { Button, DatePicker, Form, Input, Select } from "antd";
 import dayjs from "dayjs";
 
-export function TransactionModal({ handleOk, defaultValues, isEdit = false }: { handleOk: () => void; defaultValues?: any; isEdit?: boolean }) {
+export function TransactionModal({
+  handleOk,
+  defaultValues,
+  isEdit = false
+}: {
+  handleOk: () => void;
+  defaultValues?: Transaction & { id: string };
+  isEdit?: boolean;
+}) {
   const { trigger: createTrans, data, isMutating, error } = usePostTransactions();
-  console.log("setCurrentTrans(undefined)", defaultValues);
+
   const { trigger: updateTrans } = useUpdateTransactions(defaultValues?.id);
   const [form] = Form.useForm();
   const { data: user } = useUser();
@@ -23,21 +32,22 @@ export function TransactionModal({ handleOk, defaultValues, isEdit = false }: { 
       initialValues={defaultValues ? { ...defaultValues, date: dayjs(defaultValues?.date ? new Date(defaultValues?.date) : new Date()) } : undefined}
       onFinish={(values) => {
         if (isEdit) {
-          updateTrans({ data: { ...values, type: "expense", user: user.id } }).then(() => {
+          updateTrans({ data: { ...values, user: user.id } }).then(() => {
             mutate();
             handleOk();
           });
         } else {
-          createTrans({ data: { ...values, type: "expense", user: user.id } }).then(() => {
+          createTrans({ data: { ...values, user: user.id } }).then(() => {
             mutate();
             handleOk();
+            form.resetFields();
           });
         }
       }}
       form={form}
       autoComplete="off"
     >
-      <Form.Item label="Expense name" name="name" rules={[{ required: true, message: "Please enter expense name" }]}>
+      <Form.Item label="Transaction name" name="name" rules={[{ required: true, message: "Please enter transaction name" }]}>
         <Input />
       </Form.Item>
 
@@ -47,12 +57,39 @@ export function TransactionModal({ handleOk, defaultValues, isEdit = false }: { 
       <Form.Item label="Amount" name="amount" rules={[{ required: true, message: "Please enter amount" }]}>
         <Input />
       </Form.Item>
-      <Form.Item label="Categories" name="categories" rules={[{ required: true, message: "Please enter categories" }]}>
+
+      <Form.Item label="Transaction type" name="type" rules={[{ required: true, message: "Please select transaction type" }]}>
         <Select
-          placeholder="categories"
-          options={["rent", "food", "groceries", "entertainment", "productivity"].map((categories) => ({ label: categories, value: categories }))}
+          placeholder="Type"
+          options={["income", "expense"].map((type) => ({ label: type.charAt(0).toUpperCase() + type.slice(1), value: type }))}
         />
       </Form.Item>
+
+      <Form.Item noStyle shouldUpdate={(prevValues, currentValues) => prevValues.type !== currentValues.type}>
+        {({ getFieldValue }) =>
+          getFieldValue("type") === "expense" ? (
+            <Form.Item label="Categories" name="categories" rules={[{ required: true, message: "Please select category" }]}>
+              <Select
+                placeholder="categories"
+                options={["rent", "food", "groceries", "entertainment", "productivity"].map((categories) => ({
+                  label: categories.charAt(0).toUpperCase() + categories.slice(1),
+                  value: categories
+                }))}
+              />
+            </Form.Item>
+          ) : null
+        }
+      </Form.Item>
+
+      {/* <Form.Item label="Categories" name="categories" rules={[{ required: true, message: "Please select category" }]}>
+        <Select
+          placeholder="categories"
+          options={["rent", "food", "groceries", "entertainment", "productivity"].map((categories) => ({
+            label: categories.charAt(0).toUpperCase() + categories.slice(1),
+            value: categories
+          }))}
+        />
+      </Form.Item> */}
 
       <Button type="primary" htmlType="submit">
         Submit
