@@ -1,5 +1,6 @@
-![cropped](https://user-images.githubusercontent.com/69695103/221406414-4ffca23e-5b15-4533-a9a5-500561373a58.png)
-A Personal Finance Tracker for Everyone.
+
+![Untitled design (1)](https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/69695103/0a1a8d1f-3d4c-40eb-a083-359bacf306ac)
+
 This project is submitted for [Fastest Coder First Hackathon](https://www.fastestcoderfirst.com/)
 
 -----
@@ -19,14 +20,12 @@ The Idea behind **FinSense** is to Create a Web Application to add, edit, and de
 2. Home/Dashboard
 
 ## What it does?
-Travellog allows to explore different places across India and It display:
-- Name, location and description of place.
-- Details about the place like (fee, parking, pet-friendly, picnic area, medical-support, wifi, etc.)
-- Weather information as well as activity advice based on weather.
-- Precise Google Map on the location of the place.
-- User submitted reviews and feedback about the place.
+FinSense allows to add, edit, and delete income and expense transactions.
+- Name.
+- 
 ## Demo Video
-https://user-images.githubusercontent.com/69695103/221406144-aa97c5eb-33dc-48d5-870f-dc28106172ca.mp4
+https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/69695103/d0034344-b3a4-4446-96b3-f9401b702064
+
 
 ## Challenges I ran into 💻
 - Authentication 
