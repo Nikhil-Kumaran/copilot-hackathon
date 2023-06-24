@@ -34,6 +34,14 @@ The Idea behind **FinSense** is to Create a Web Application to add, edit, and de
 - FinSense allows to add, edit, and delete income, expense transactions.
 - Helps you visualize transactions via charts.
 
+## How GitHub Copilot helped us in this project?
+1. Increased Productivity
+2. Improved Code Quality
+3. Faster Prototyping than we expected
+4. Eases Learning
+5. Error handling and exception handling was absolutely doing good
+6. Code Refactoring
+7. GitHub Copilot Labs Extension in Visual Studio Code was extensively useful in Fixing Bugs and improved readability
 
 ## GitHub Copilot Demo Video
 https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/69695103/d0034344-b3a4-4446-96b3-f9401b702064
@@ -47,7 +55,8 @@ https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/69695103/d0034344-b3a
 This is the **First Time** we were using **Strapi** and with the use of GitHub Copilot we were able to code faster than we could and finish a complete web application.
 
 ## What we learnt 📚
-We learnt many new things like Strapi, and a few unknown factors about React making every second we spent on this hackathon fully worthwhile.
+- We learnt many new things like Strapi, and a few unknown factors about React making every second we spent on this hackathon fully worthwhile.
+- Efficiently use GitHub Copilot.
 
 ## What's next for FinSense:
 Up-next is to develop this application with more advanced features and functionalities to help financially take control of their expenses and keep track of it.
