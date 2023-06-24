@@ -49,7 +49,9 @@ https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/25131835/e353b65d-448
 
 ## GitHub Copilot Demo Video
 
-https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/69695103/d0034344-b3a4-4446-96b3-f9401b702064
+https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/69695103/69288243-fe6f-48e3-b424-0e16b1df344d
+
+
 
 ## Challenges we ran into 💻
 
