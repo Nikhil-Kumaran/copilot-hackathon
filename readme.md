@@ -12,9 +12,9 @@ The Idea behind **FinSense** is to Create a Web Application to add, edit, and de
     <img src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="react" width="40" height="40"/>
     <img src="https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png" alt="type" width="40" height="40"/>
     <img src="https://user-images.githubusercontent.com/25181517/190887795-99cb0921-e57f-430b-a111-e165deedaa36.png" alt="ant" width="40" height="40"/>
-    <img src="https://user-images.githubusercontent.com/25181517/190887795-99cb0921-e57f-430b-a111-e165deedaa36.png" alt="ant" width="40" height="40"/>
-</p>
 
+</p>
+    ![next](https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/69695103/6fd3c0bf-6541-48ec-9dd6-35bf2afe3894)
 ## Structure of the Project:
 1. Authentication Page
 2. Home/Dashboard
