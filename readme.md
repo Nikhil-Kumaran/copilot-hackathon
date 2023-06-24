@@ -14,8 +14,9 @@ The Idea behind **FinSense** is to Create a Web Application to add, edit, and de
     <img src="https://user-images.githubusercontent.com/25181517/190887795-99cb0921-e57f-430b-a111-e165deedaa36.png" alt="ant" width="40" height="40"/>
     <img src="https://raw.githubusercontent.com/ahamedbasha-n/JavaScript/main/next.png" alt="ant" width="100" height="30"/>
     <img src="https://raw.githubusercontent.com/ahamedbasha-n/JavaScript/main/strapii.png" alt="stra" width="100" height="30"/>
-    <img src="https://raw.githubusercontent.com/ahamedbasha-n/JavaScript/main/swr.png" alt="stra" width="75" height="60"/>
-    <img src="https://raw.githubusercontent.com/ahamedbasha-n/JavaScript/main/sql.png" alt="stra" width="100" height="50"/>
+    <img src="https://raw.githubusercontent.com/ahamedbasha-n/JavaScript/main/swr.png" alt="swr" width="75" height="60"/>
+    <img src="https://raw.githubusercontent.com/ahamedbasha-n/JavaScript/main/sql.png" alt="sql" width="100" height="50"/>
+    <img src="https://raw.githubusercontent.com/ahamedbasha-n/JavaScript/main/pilot.png" alt="pilot" width="50" height="56"/>
 
 </p>
 
