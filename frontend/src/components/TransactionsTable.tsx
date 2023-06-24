@@ -1,11 +1,12 @@
 import { useGetTransactions } from "@/hooks/data-fetching/useGetTransactions";
 import { useUser } from "@/hooks/data-fetching/useUser";
-import { Modal, Space, Statistic } from "antd";
+import { Button, Modal, Space, Statistic } from "antd";
 import { Tag } from "antd";
 import { Table } from "antd";
 import { useState } from "react";
 import { TransactionModal } from "./TransactionModal";
 import { useDeleteTransactions } from "@/hooks/data-fetching/useDeleteTransaction";
+import { CSVLink, CSVDownload } from "react-csv";
 
 export function TransactionsTable() {
   const { data: user } = useUser();
@@ -103,6 +104,12 @@ export function TransactionsTable() {
 
   const totalExpense = parsedData?.filter((data) => data?.type === "expense")?.reduce((acc, data) => acc + data.amount, 0);
 
+  const csvData = [["Name", "Type", "Amount", "Date", "Category"]];
+
+  parsedData?.forEach((d) => {
+    csvData.push([d.name, d.type, String(d.amount), d.date, d.categories]);
+  });
+
   return (
     <>
       <div
@@ -143,14 +150,19 @@ export function TransactionsTable() {
           title="Balance"
           value={totalIncome - totalExpense}
         />
-      </div>
 
+        <div>
+          <CSVLink filename={"FinSense-transactions.csv"} data={csvData}>
+            <Button>Export as CSV</Button>
+          </CSVLink>
+        </div>
+      </div>
       <br />
       {/* <div>
         {totalIncome} {totalExpense}
       </div> */}
-      <Table columns={columns} dataSource={parsedData || []} loading={isLoading || !user?.id} pagination={false} />
 
+      <Table columns={columns} dataSource={parsedData || []} loading={isLoading || !user?.id} pagination={false} />
       <Modal title="Edit transaction" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={null} destroyOnClose>
         <TransactionModal handleOk={handleOk} defaultValues={currentTrans} isEdit />
       </Modal>
