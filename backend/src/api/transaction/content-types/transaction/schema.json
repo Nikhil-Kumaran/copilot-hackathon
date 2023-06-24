@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "Transaction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "categories": {
+      "type": "enumeration",
+      "enum": [
+        "rent",
+        "food",
+        "groceries",
+        "entertainment",
+        "productivity"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "income",
+        "expense",
+        "savings"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
