@@ -45,7 +45,7 @@ https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/25131835/e353b65d-448
 4. Eases Learning
 5. Error handling and exception handling was absolutely doing good
 6. Code Refactoring
-7. GitHub Copilot Labs Extension in Visual Studio Code was extensively useful in Fixing Bugs and improved readability
+7. GitHub Copilot Labs Extension in Visual Studio Code was extremely useful in Fixing Bugs and improved readability
 
 ## GitHub Copilot Demo Video
 
@@ -56,7 +56,7 @@ https://github.com/Nikhil-Kumaran/copilot-hackathon/assets/69695103/69288243-fe6
 ## Challenges we ran into 💻
 
 - Setting up an environment/playground to build was difficult at the beginning.
-- Fixing bugs and managing code from local to cloud was taking was challenging.
+- We faced few access issues while commiting the code.
 
 ## Accomplishments that we are proud of 🏆
 
