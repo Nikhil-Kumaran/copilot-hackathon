@@ -67,7 +67,7 @@ This is the **First Time** we were using **Strapi** and with the use of GitHub C
 
 ## What's next for FinSense:
 
-Up-next is to develop this application with more advanced features and functionalities to help financially take control of their expenses and keep track of it.
+Up-next is to develop this application with more advanced features and functionalities and add more statistic visualisations.
 
 ## Team Members:
 
